@@ -1,0 +1,59 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'diagonalDifference' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts 2D_INTEGER_ARRAY arr as parameter.
+#
+
+def diagonalDifference(arr):
+
+    
+    sumsc=[]
+    dia=0
+    for j in range(0,n):
+        matrix1=arr[j]
+        dia=matrix1[j]
+        sumsc.append(dia)
+
+    def Reverse(arr):
+        arr.reverse()
+        return arr
+
+    arr=Reverse(arr)
+
+    sumpr = []
+    dia = 0
+
+    for j in range(0,n):
+        matrix2 = arr[j]
+        dia = matrix2[j]
+        sumpr.append(dia)
+
+    sumsc=sum(sumsc)
+    sumpr=sum(sumpr)
+    total=sumpr-sumsc
+    return  abs(total)
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    arr = []
+
+    for i in range(n):
+        arr.append(list(map(int, input().rstrip().split())))
+
+    result = diagonalDifference(arr)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()

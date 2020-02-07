@@ -1,0 +1,39 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the plusMinus function below.
+def plusMinus(arr):
+    positive=0
+    negative=0
+    zero=0
+    results=[positive,negative,zero]
+    denomiator=len(arr)
+
+    for i in range(denomiator):
+        if arr[i] > 0 :
+            results.pop(0)
+            positive=positive+1
+            results.insert(0,positive)
+        elif arr[i] < 0:
+            results.pop(1)
+            negative=negative+1
+            results.insert(1,negative)
+        else:
+            results.pop(2)
+            zero=zero+1
+            results.append(zero)
+    answers=len(results)
+    for i in range(answers):
+        print(f"{results[i]/denomiator}00000")
+    
+if __name__ == '__main__':
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    plusMinus(arr)

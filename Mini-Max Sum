@@ -1,0 +1,23 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the miniMaxSum function below.
+def miniMaxSum(arr):
+    minmax=[]
+    for i in range(0,len(arr)):
+        val=sum(arr)-arr[i]
+        minmax.append(val)
+
+    high=max(minmax)
+    low=min(minmax)
+
+    return print(low, high)
+if __name__ == '__main__':
+    arr = list(map(int, input().rstrip().split()))
+
+    miniMaxSum(arr)

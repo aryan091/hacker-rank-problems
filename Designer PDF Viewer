@@ -1,0 +1,41 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the designerPdfViewer function below.
+def designerPdfViewer(h, word):
+    num=[97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 
+        113, 114, 115, 116, 117, 118, 119, 120, 121, 122]
+    words=[]
+    for i in range(len(word)):
+        words.append(ord(word[i]))
+
+
+    res = {}
+    for key in num:
+        for value in h:
+            res[key] = value
+            h.remove(value)
+            break
+    final=[]
+    for i in words:
+        final.append(res[i])
+    return (max(final)*len(word))
+
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    h = list(map(int, input().rstrip().split()))
+
+    word = input()
+
+    result = designerPdfViewer(h, word)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()

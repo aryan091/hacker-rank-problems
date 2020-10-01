@@ -6,4 +6,3 @@
 
 Here we have the solutions of Hacker Rank Problems 
 
-get the fuck ouut of here
